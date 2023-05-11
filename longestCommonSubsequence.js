@@ -24,4 +24,4 @@ function longestCommonSubsequence(firstString, secondString) {
 
 
 
-longestCommonSubsequence('ATACAG', 'TTACG');
+longestCommonSubsequence('XYZYZ', 'ZXYYZ');

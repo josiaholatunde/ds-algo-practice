@@ -17,6 +17,7 @@ function partition(A, leftIndex, rightIndex) {
             i++;
             swap(A, i, j);
         }
+        console.table(A);
     }
     swap(A, i + 1, rightIndex);
     return i + 1;
@@ -31,4 +32,5 @@ function swap(A, i, j) {
 
 
 const arrayToBeSorted = [10, 4, 7, 1, 2, 8, 3];
-console.log(quickSort(arrayToBeSorted, 0, arrayToBeSorted.length - 1));
+// console.log(quickSort(arrayToBeSorted, 0, arrayToBeSorted.length - 1));
+partition([11, 5, 19, 17, 2, 7, 3, 13], 0, 7);
