@@ -23,5 +23,5 @@ function longestCommonSubsequence(firstString, secondString) {
 }
 
 
-
-longestCommonSubsequence('XYZYZ', 'ZXYYZ');
+// longestCommonSubsequence(horizontal, vertical)
+console.log(longestCommonSubsequence('XYZYZ', 'ZXYYZ'));

@@ -1,0 +1,15 @@
+ModifiedSearch(A, n, x)
+    for i = 1 to n do
+        low = 1
+        high = n
+        while low <= high do
+            mid = (low + high) / 2
+            if A[i][mid] == x then
+                return (i, mid)
+            else if A[i][mid] < x then
+                low = mid + 1
+            else
+            high = mid - 1
+        end while
+    end for
+return "Not found"

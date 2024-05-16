@@ -43,3 +43,10 @@ floydWarshall([
     [Infinity, Infinity, 0, 6],
     [Infinity, 7, Infinity, 0]
 ], 4);
+
+
+// floydWarshall([
+//     [0, -2, 5],
+//     [8, 0, 4],
+//     [-1, 2, 0]
+// ], 3);

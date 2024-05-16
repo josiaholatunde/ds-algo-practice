@@ -1,0 +1,16 @@
+Dijkstra(G, s) // source vertex s
+    for each vertex v {
+        D[v] := d(s, v) // provisional dist.
+        E[v] := 1 if v is neighbor of s, otherwise 0
+    }
+    S := {s}
+    while (S != V) {
+        find u in V – S with minimum D[u]
+        add u to S
+        for each v in V – S {
+            if (D[u] + d(u,v) < D[v] or (D[u] + d(u, v) == D[v] and E[v] > 1 + E[u]) {
+                D[v] := D[u] + d(u, v)
+                E[v] := 1 + E[u]
+            }
+    }
+}

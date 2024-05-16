@@ -1,8 +1,11 @@
 function quickSort(A, leftIndex, rightIndex) {
     if (leftIndex < rightIndex) {
         const partitionIndex = partition(A, leftIndex, rightIndex);
-        console.log('Array ----> ', A);
+        console.log('Array after partition  ----> ', A, 'Partition index ', partitionIndex + 1);
+
+        console.log(`QuickSort(A, ${leftIndex + 1}, ${partitionIndex})`);
         quickSort(A, leftIndex, partitionIndex - 1);
+        console.log(`QuickSort(A, ${partitionIndex + 2}, ${rightIndex + 1})`);
         quickSort(A, partitionIndex + 1, rightIndex);
     }
 }
@@ -32,5 +35,5 @@ function swap(A, i, j) {
 
 
 const arrayToBeSorted = [10, 4, 7, 1, 2, 8, 3];
-// console.log(quickSort(arrayToBeSorted, 0, arrayToBeSorted.length - 1));
-partition([11, 5, 19, 17, 2, 7, 3, 13], 0, 7);
+console.log(`QuickSort(A, 1, ${arrayToBeSorted.length}`);
+quickSort(arrayToBeSorted, 0, arrayToBeSorted.length - 1);

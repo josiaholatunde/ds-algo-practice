@@ -1,4 +1,4 @@
-function primMST(graph, startingVertex) {
+function dijkstraShortestPath(graph, startingVertex) {
     const dList = [];
     const predecessorList = [];
     const processedVertices = new Set();
@@ -11,12 +11,12 @@ function primMST(graph, startingVertex) {
 
     while (processedVertices.size < graph.length) {
 
-        const u = selectMinVertex(dList, processedVertices)
+        const u = selectMinVertex(dList, processedVertices) // u indicates vertex of minimum distance for from current reference
         processedVertices.add(u);
         console.log('Current Vertx ---- Minimum vertex ---->', u);
         for (let j = 0; j < graph.length; j++) {
-            if (graph[u][j] !== Infinity && !processedVertices.has(j) && graph[u][j] < dList[j]) {
-                dList[j] = graph[u][j];
+            if (graph[u][j] !== 0 && !processedVertices.has(j) && dList[u] !== Infinity && dList[u] + graph[u][j] < dList[j]) {
+                dList[j] = graph[u][j] + dList[u];
                 predecessorList[j] = u;
             }
         }
@@ -50,11 +50,20 @@ function selectMinVertex(dList, processedVertices) {
 // ], 0)
 
 
-primMST([
-    [ 0, 7, 2, 4, Infinity, Infinity],
-    [ 7, 0, Infinity, 5, Infinity, Infinity],
-    [ 2, Infinity, 0, 8, 3, Infinity], 
-    [ 4, 5, 8, 0, 9, 1], 
-    [ Infinity, Infinity, 3, 9, 0, 6],
-    [ Infinity, Infinity, Infinity, 1, 6, 0],
+// dijkstraShortestPath([
+//     [ 0, 2, Infinity, 7, 4, Infinity],
+//     [ Infinity, 0, 3, Infinity, 8, Infinity],
+//     [ Infinity, Infinity, 0, Infinity, Infinity, 6], 
+//     [ Infinity, Infinity, Infinity, 0, 5, Infinity], 
+//     [ Infinity, Infinity, 9, Infinity, 0, 1],
+//     [ Infinity, Infinity, Infinity, Infinity, Infinity, 0],
+// ], 0)
+
+
+dijkstraShortestPath([
+    [ 0, 7, 8, Infinity, Infinity],
+    [ 7, 0, 3, 2, 4],
+    [ 8, 3, 0, 6, 5], 
+    [ Infinity, 2, 6, 0, 1], 
+    [ Infinity, 4, 5, 1, 0],
 ], 0)

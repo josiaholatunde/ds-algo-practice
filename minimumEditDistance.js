@@ -37,4 +37,6 @@ function getMinCost(costOfEdit, costOfInsert, costOfDelete) {
 }
 
 
-minimumEditDistance("abcbdab", "bdcaba", 1, 1, 1);
+// minimumEditDistance("abcbdab", "bdcaba", 1, 1, 1);
+// verticalAxis, horizontalAxis
+minimumEditDistance("CBAC", "ACBB", 3, 2, 2);
